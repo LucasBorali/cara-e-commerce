@@ -3,23 +3,29 @@ import classes from './Navbar.module.css';
 import ReactDOM from 'react-dom';
 import logo from '../../Assets/logo.png';
 
-
 const Navbar = () => {
-    const [displayMenu, setDisplayMenu] = useState(false);
+  const [displayMenu, setDisplayMenu] = useState(false);
+  const [displayCart, setDisplayCart] = useState(false);
 
-    const displayMenuHandler = function() {
-        if (!displayMenu) {
-            setDisplayMenu(true)
+  const displayMenuHandler = function () {
+    if (!displayMenu) {
+      setDisplayMenu(true);
     } else {
-        setDisplayMenu(false)
+      setDisplayMenu(false);
     }
-    };
+  };
 
-    const overlayHandler = function(e) {
-        
-            setDisplayMenu(false)
-        
+  const overlayHandler = function () {
+    setDisplayMenu(false);
+  };
+
+  const displayCartHandler = function () {
+    if (!displayCart) {
+      setDisplayCart(true);
+    } else {
+      setDisplayCart(false);
     }
+  };
 
   return (
     <nav className={classes.navbar}>
@@ -28,33 +34,41 @@ const Navbar = () => {
       {displayMenu &&
         ReactDOM.createPortal(
           <div onClick={overlayHandler} className={classes.overlay}>
-            <ul>
-            <li>
-              <a href="#">Home</a>
-            </li>
-            <li>
-              <a href="#">Shop</a>
-            </li>
-            <li>
-              <a href="#">Blog</a>
-            </li>
-            <li>
-              <a href="#">About</a>
-            </li>
-            <li>
-              <a href="#">Contact</a>
-            </li>
-          </ul>
-
+            <ul className={classes.menu}>
+              <li>
+                <a href="#">Home</a>
+              </li>
+              <li>
+                <a href="#">Shop</a>
+              </li>
+              <li>
+                <a href="#">Blog</a>
+              </li>
+              <li>
+                <a href="#">About</a>
+              </li>
+              <li>
+                <a href="#">Contact</a>
+              </li>
+            </ul>
           </div>,
           document.getElementById('window-root')
         )}
 
       <div>
         {window.innerWidth <= 500 ? (
-          <button onClick={displayMenuHandler}><svg fill="#000000" width="800px" height="800px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg">
-          <path d="M0.844 6.050c-0.256-0.256-0.381-0.581-0.381-0.975s0.125-0.719 0.381-0.975 0.581-0.381 0.975-0.381h28.512c0.394 0 0.719 0.125 0.975 0.381s0.381 0.581 0.381 0.975-0.125 0.719-0.381 0.975-0.581 0.381-0.975 0.381h-28.512c-0.394 0-0.719-0.125-0.975-0.381zM31.306 14.963c0.256 0.256 0.381 0.581 0.381 0.975s-0.125 0.719-0.381 0.975-0.581 0.381-0.975 0.381h-28.512c-0.394 0-0.719-0.125-0.975-0.381s-0.381-0.581-0.381-0.975 0.125-0.719 0.381-0.975 0.581-0.381 0.975-0.381h28.512c0.394 0 0.719 0.125 0.975 0.381zM31.306 25.819c0.256 0.256 0.381 0.581 0.381 0.975s-0.125 0.719-0.381 0.975-0.581 0.381-0.975 0.381h-28.512c-0.394 0-0.719-0.125-0.975-0.381s-0.381-0.581-0.381-0.975 0.125-0.719 0.381-0.975 0.581-0.381 0.975-0.381h28.512c0.394 0 0.719 0.131 0.975 0.381z"></path>
-      </svg></button>
+          <button onClick={displayMenuHandler}>
+            <svg
+              fill="#000000"
+              width="800px"
+              height="800px"
+              viewBox="0 0 32 32"
+              version="1.1"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path d="M0.844 6.050c-0.256-0.256-0.381-0.581-0.381-0.975s0.125-0.719 0.381-0.975 0.581-0.381 0.975-0.381h28.512c0.394 0 0.719 0.125 0.975 0.381s0.381 0.581 0.381 0.975-0.125 0.719-0.381 0.975-0.581 0.381-0.975 0.381h-28.512c-0.394 0-0.719-0.125-0.975-0.381zM31.306 14.963c0.256 0.256 0.381 0.581 0.381 0.975s-0.125 0.719-0.381 0.975-0.581 0.381-0.975 0.381h-28.512c-0.394 0-0.719-0.125-0.975-0.381s-0.381-0.581-0.381-0.975 0.125-0.719 0.381-0.975 0.581-0.381 0.975-0.381h28.512c0.394 0 0.719 0.125 0.975 0.381zM31.306 25.819c0.256 0.256 0.381 0.581 0.381 0.975s-0.125 0.719-0.381 0.975-0.581 0.381-0.975 0.381h-28.512c-0.394 0-0.719-0.125-0.975-0.381s-0.381-0.581-0.381-0.975 0.125-0.719 0.381-0.975 0.581-0.381 0.975-0.381h28.512c0.394 0 0.719 0.131 0.975 0.381z"></path>
+            </svg>
+          </button>
         ) : (
           <ul>
             <li>
@@ -75,7 +89,17 @@ const Navbar = () => {
           </ul>
         )}
 
-        <button>
+        {displayCart &&
+          ReactDOM.createPortal(
+            <div onClick={displayCartHandler} className={classes.overlay}>
+              <ul className={classes.cart}>
+                <li>fisrt item</li>
+              </ul>
+            </div>,
+            document.getElementById('window-root')
+          )}
+
+        <button onClick={displayCartHandler}>
           <svg
             width="800px"
             height="800px"

@@ -6,18 +6,20 @@
   justify-content: space-between;
   position: fixed;
   width: 100vw;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.253);
+  z-index: 2;
 }
 .navbar img {
-    margin: 0 1rem;
+  margin: 0 1rem;
 }
 
 .navbar ul {
   display: flex;
- 
+
   justify-content: center;
   align-items: center;
   padding: 0;
-  gap: 1.5rem
+  gap: 1.5rem;
 }
 
 .navbar button {
@@ -25,7 +27,12 @@
   background-color: transparent;
   margin: 0 1rem;
   cursor: pointer;
-  
+  border-radius: 50px;
+  transition: 0.2s ease;
+}
+
+.navbar button:hover {
+  background-color: #b5b7c1;
 }
 
 .navbar svg {
@@ -37,56 +44,103 @@
   display: flex;
 }
 
-.navbar a{
-    font-weight: bold;
-    
+.navbar a {
+  font-weight: bold;
 }
 
 .navbar a:hover {
-    color: #419F9C;
-    border-bottom: 2px solid #419F9C
-
+  color: #419f9c;
+  border-bottom: 2px solid #419f9c;
 }
 
+.overlay {
+  position: fixed;
+  z-index: 1;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: right;
+}
+
+.cart {
+  background-color: #fff;
+  width: 15rem;
+  animation: growing 0.6s 0.3s forwards;
+  height: 5rem;
+  border-radius: 10px;
+  box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.209);
+  max-height: 17rem;
+  display: flex;
+  justify-content: center;
+  padding: 0;
+  margin-top: 13vh;
+  margin-right: 2rem;
+  min-height: 3rem;
+}
+
+@keyframes growing {
+  from {
+    height: 5rem;
+  }
+  to {
+    height: 17rem;
+  }
+}
 
 @media (max-width: 500px) {
-    .navbar div {
-        flex-direction: row-reverse;
-    }
-    .overlay {
-        position: fixed;
-        z-index: 1;
-        background-color: #36363826;
-        height: 100vh;
-        width: 100vw;
-        display: flex;
-        justify-content: right;
-    }
+  .navbar div {
+    flex-direction: row-reverse;
+  }
 
-    .navbar svg {
-        width: 42px;
-        height: 42px;
-      }
+  .overlay {
+    background-color: #36363826;
+  }
 
-    .overlay ul {
-        background-color: #e3e6f2;
-        margin: 0;
-        height: 100vh;
-        width: 40vw;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        gap: 2rem;
-        font-weight: bold;
-        animation: sliding 1s ;
-    }
+  .navbar svg {
+    width: 42px;
+    height: 42px;
+  }
 
-    @keyframes sliding {
-        from {
-            transform: translateX(300px);
-        }to {
-            transform: translateX(0);
-        }
-        
+  .menu {
+    background-color: #e3e6f2;
+    margin: 0;
+    height: 100vh;
+    width: 40vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 2rem;
+    font-weight: bold;
+    animation: sliding 0.2s;
+  }
+
+  @keyframes sliding {
+    from {
+      transform: translateX(300px);
     }
+    to {
+      transform: translateX(0);
+    }
+  }
+
+  .cart {
+    width: 100%;
+    animation: growing 0.5s;
+    height: 17rem;
+    border-radius: 10px;
+    box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.209);
+    display: flex;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+  }
+
+  @keyframes growing {
+    from {
+      height: 2rem;
+    }
+    to {
+      height: 17rem;
+    }
+  }
 }
