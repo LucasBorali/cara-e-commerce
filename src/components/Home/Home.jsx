@@ -3,8 +3,9 @@ import heroImage from '../../Assets/hero4.png';
 import buttonImage from '../../Assets/button.png';
 import classes from './Home.module.css';
 import { features } from '../../Assets/features/features';
+import DisplayProducts from './DisplayProducts';
 
-const Home = () => {
+const Home = ({products}) => {
   return (
     <section className={classes.home}>
       <header className={classes.head}>
@@ -37,7 +38,7 @@ const Home = () => {
               color: '#959AB2',
               fontSize: '1.2rem',
               width: '50vw',
-              maxWidth: '300px'
+              maxWidth: '300px',
             }}
           >
             Save more with coupons 8 up to 70% off
@@ -122,6 +123,8 @@ const Home = () => {
           </p>
         </div>
       </div>
+    <DisplayProducts description='Summer Collection New Modern Design' products={products} title='Featured Products'/>
+      
     </section>
   );
 };

@@ -1,98 +1,94 @@
 .head {
-    background-color: #E3E6F3;
-    height: 100vh;
-    display: flex;
-    position: relative;
-    z-index: 0;
-    align-items: center;
+  background-color: #e3e6f3;
+  height: 100vh;
+  display: flex;
+  position: relative;
+  z-index: 0;
+  align-items: center;
 }
 
 .head img {
-    width: auto;
-    height: 90vh;
-    object-fit: cover;
-    margin: 0;
-    position: absolute;
-    z-index: -1;
-    right: 0;
-    bottom: 0; 
+  width: auto;
+  height: 90vh;
+  object-fit: cover;
+  margin: 0;
+  position: absolute;
+  z-index: -1;
+  right: 0;
+  bottom: 0;
 }
 
 .hero {
-    display: flex;
-    flex-direction: column;
-    text-align: left;
-    margin-left: 20vw;
-    gap: 1rem;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  margin-left: 20vw;
+  gap: 1rem;
 }
 
 .hero p {
-    font-weight: bold;
-    margin: 0;
+  font-weight: bold;
+  margin: 0;
 }
 
 .hero button {
-    position: relative;
-    background-color: transparent;
-    border: none;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: #3D827A;
-    font-weight: bold;
-    font-size: 1.2rem;
-    cursor: pointer;
-    
+  position: relative;
+  background-color: transparent;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #3d827a;
+  font-weight: bold;
+  font-size: 1.2rem;
+  cursor: pointer;
 }
 .hero img {
-    height: 50px;
-    position: static;
+  height: 50px;
+  position: static;
 }
 
-
 .features {
-    display: flex;
-    justify-content: space-around;
-    padding: 3rem;
+  display: flex;
+  justify-content: space-around;
+  padding: 3rem;
 }
 
 .features div {
-    border: 1px solid rgb(194, 191, 191);
-    padding: 10px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 15px;
-    box-shadow: 0 0 12px rgba(0, 0, 0, 0.254);
+  border: 1px solid rgb(219, 219, 219);
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.108);
 }
 
 .features p {
-    margin: 0;
-    border-radius: 5px;
-    padding: 3px;
-    font-weight: bold;
+  margin: 0;
+  border-radius: 5px;
+  padding: 3px;
+  font-weight: bold;
 }
 
-
 @media (max-width: 500px) {
-    .head {
-        overflow-x: hidden;
-    }
-    
-    .head img {
-        right: -79vw;
-    }
+  .head {
+    overflow-x: hidden;
+  }
 
-    .hero {
-        margin-left: 10px;
-    }
+  .head img {
+    right: -79vw;
+  }
 
+  .hero {
+    margin-left: 10px;
+  }
 
-
-    .features {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 3rem;
-    }
+  .features {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    padding: 2rem;
+  }
 }
