@@ -1,3 +1,48 @@
 .App {
   text-align: center;
 }
+
+.news-letter {
+  background-color: #060f1e;
+  height: 200px;
+  position: relative;
+  overflow-y: hidden;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.news-letter span {
+  color: #ffcf3d;
+}
+
+.news-letter img {
+  position: absolute;
+  left: 3rem;
+}
+
+.subscribe {
+  display: flex;
+}
+
+.subscribe input {
+  height: 3rem;
+  padding: 0;
+  width: 300px;
+  outline: none;
+  border: none;
+  border-radius: 10px 0 0 10px; 
+  font-size: 1rem;
+  padding-left: 10px;
+}
+
+.subscribe button {
+  height: 3rem;
+  width: 100px;
+  background-color: #3d827a;
+  border: none;
+  color: #fff;
+  border-radius: 0 10px 10px 0;
+  cursor: pointer;
+}

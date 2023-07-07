@@ -32,6 +32,18 @@ import f7b from './f7-b.jpg';
 import f8 from './f8.jpg';
 import f8a from './f8-a.jpg';
 
+import n1 from './n1.jpg';
+import n1a from './n1-a.jpg';
+import n1b from './n1-b.jpg';
+import n1c from './n1-c.jpg';
+
+import n2 from './n2.jpg';
+import n3 from './n3.jpg';
+import n4 from './n4.jpg';
+import n5 from './n5.jpg';
+import n6 from './n6.jpg';
+import n7 from './n7.jpg';
+import n8 from './n8.jpg';
 
 class Products {
   constructor(img, name, price, brand) {
@@ -50,35 +62,31 @@ export const summerItems = [
     30.99,
     'Ambition'
   ),
-  new Products(
-    [f3, f3a, f3b, f3c],
-    'Hawaian Shirt - Summer Edition',
-    30.99,
-    'Ambition'
-  ),
+  new Products([f3, f3a, f3b, f3c], 'White Shirt', 10.99, 'Ambition'),
   new Products(
     [f4, f4a, f4b, f4c],
-    'Hawaian Shirt - Summer Edition',
-    30.99,
+    'Cherry Blossoms Floral Shirt',
+    15.99,
     'Ambition'
   ),
-  new Products(
-    [f5, f5a, f5b, f5c],
-    'Hawaian Shirt - Summer Edition',
-    30.99,
-    'Ambition'
-  ),
-  new Products(
-    [f6, f6a, f6b, f6c],
-    'Hawaian Shirt - Summer Edition',
-    30.99,
-    'Ambition'
-  ),
+  new Products([f5, f5a, f5b, f5c], 'New Floral Shirt', 20.99, 'Ambition'),
+  new Products([f6, f6a, f6b, f6c], 'Chemise En Velours', 30.99, 'Éphémère'),
   new Products(
     [f7, f7a, f7b],
-    'Hawaian Shirt - Summer Edition',
-    30.99,
+    'Striped Print Button Culottes',
+    25.99,
     'Ambition'
   ),
-  new Products([f8, f8a], 'Hawaian Shirt - Summer Edition', 30.99, 'Ambition'),
+  new Products([f8, f8a], 'Casual - New Design', 40.99, 'Ambition'),
+];
+
+export const newArrivals = [
+  new Products([n1, n1a, n1b, n1c], 'Casual - New Design', 40.99, 'Ambition'),
+  new Products([n2], 'Stripe Comfort', 50.99, 'Ambition'),
+  new Products([n3], "Spring Escape Men's Apparel", 80.99, 'Ambition'),
+  new Products([n4], 'Resort Shirt', 45.99, 'Ambition'),
+  new Products([n5], 'Fashion Biz Indie Long Sleeve Shirt', 65.99, 'Ambition'),
+  new Products([n6], 'Short Casual', 15.99, 'Ambition'),
+  new Products([n7], ' Howard Shirt army', 40.99, 'Ambition'),
+  new Products([n8], 'Chitose arbe Stand Collar Shirt', 40.99, 'Ambition'),
 ];
