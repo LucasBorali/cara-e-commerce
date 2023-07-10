@@ -27,6 +27,13 @@
     flex-direction: column;
     align-items: start;
     justify-content: space-around;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.card:hover {
+    transform: scale(1.03);
+
 }
 
 .card img {
@@ -64,6 +71,8 @@
 .card svg {
     width: 100%;
 }
+
+
 
 @media (max-width: 500px) {
     .card {

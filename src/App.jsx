@@ -7,12 +7,21 @@ import logo from './Assets/logo.png';
 import app from './Assets/pay/app.jpg';
 import play from './Assets/pay/play.jpg';
 import pay from './Assets/pay/pay.png';
+import { useState } from 'react';
+import Shop from './components/Shop/Shop';
 
 function App() {
+  const [window, setWindow] = useState('Shop')
+
   return (
     <div className="App">
-      <Navbar />
-      <Home products={[summerItems, newArrivals]} />
+      <Navbar setWindow={setWindow} />
+      {window === 'Home' && <Home products={[summerItems, newArrivals]} />}
+      {window === 'Shop' && <Shop />}
+      {window === 'Blog' }
+      {window === 'About' }
+      {window === 'Contact' }
+      
       <div className="news-letter">
         <img src={b14} alt="subscribe" />
         <div>

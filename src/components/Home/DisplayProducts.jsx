@@ -1,13 +1,22 @@
-import React from 'react';
+import React, { useState } from 'react';
 import classes from './DisplayProducts.module.css';
+import ReactDOM from 'react-dom';
+import ProductWindow from './ProductWindow';
 
 const DisplayProducts = ({ title, description, products }) => {
+  const [viewProduct, setViewProduct] = useState(products[2])
+
+
+const showProductHandler = function(product){
+  setViewProduct(product)
+}
+
   return (
     <div className={classes['display-product']}>
       <h2>{title}</h2>
       <p>{description}</p>
       <div className={classes.container}>
-        {products.map((product) => <div key={product.img} className={classes.card}>
+        {products.map((product) => <div onClick={()=> showProductHandler(product)} key={product.img} className={classes.card}>
           <img src={product.img[0]} alt={product.name} />
           <p
             style={{
@@ -57,6 +66,10 @@ const DisplayProducts = ({ title, description, products }) => {
           </div>
         </div>)}
       </div>
+      {viewProduct !== null && ReactDOM.createPortal(
+          <ProductWindow product={viewProduct}/>,
+          document.getElementById('window-root')
+        )}
     </div>
   );
 };

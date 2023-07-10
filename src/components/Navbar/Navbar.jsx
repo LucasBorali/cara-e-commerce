@@ -3,7 +3,7 @@ import classes from './Navbar.module.css';
 import ReactDOM from 'react-dom';
 import logo from '../../Assets/logo.png';
 
-const Navbar = () => {
+const Navbar = ({setWindow}) => {
   const [displayMenu, setDisplayMenu] = useState(false);
   const [displayCart, setDisplayCart] = useState(false);
 
@@ -27,6 +27,11 @@ const Navbar = () => {
     }
   };
 
+  const changeWindowHandler = function(e) {
+    setWindow(e.target.innerText)
+  }
+
+
   return (
     <nav className={classes.navbar}>
       <img src={logo} alt="logo" />
@@ -34,8 +39,8 @@ const Navbar = () => {
       {displayMenu &&
         ReactDOM.createPortal(
           <div onClick={overlayHandler} className={classes.overlay}>
-            <ul className={classes.menu}>
-              <li>
+            <ul onClick={changeWindowHandler} className={classes.menu}>
+              <li >
                 <a href="#">Home</a>
               </li>
               <li>
@@ -70,7 +75,7 @@ const Navbar = () => {
             </svg>
           </button>
         ) : (
-          <ul>
+          <ul onClick={changeWindowHandler}>
             <li>
               <a href="#">Home</a>
             </li>
