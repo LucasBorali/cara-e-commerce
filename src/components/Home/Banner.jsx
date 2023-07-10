@@ -5,7 +5,7 @@ const Banner = props => {
   return (
     <div
       style={{
-        width: props.width,
+        width: window.innerWidth <= 500 ? "90vw" : props.width,
         height: props.height,
         alignItems: props.alignItems,
         color: props.color,

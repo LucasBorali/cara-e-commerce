@@ -6,11 +6,12 @@
   background-color: #060f1e;
   height: 200px;
   position: relative;
-  overflow-y: hidden;
+  overflow: hidden;
   color: #fff;
   display: flex;
   align-items: center;
   justify-content: space-around;
+ 
 }
 
 .news-letter span {
@@ -45,4 +46,56 @@
   color: #fff;
   border-radius: 0 10px 10px 0;
   cursor: pointer;
+}
+
+.icons {
+  display: flex;
+  justify-content: left;
+  gap: 5px;
+  flex-direction: row;
+}
+
+.icons svg{
+  width: 16px;
+  height: 16px;
+  
+
+}
+
+footer {
+  display: flex;
+  justify-content: space-around;
+  
+}
+
+footer div {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+footer ul {
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  gap: 5px
+}
+
+footer h4 {
+  margin: 5px;
+}
+
+@media (max-width: 500px) {
+  .news-letter {
+    flex-direction: column;
+  }
+
+  footer {
+   flex-wrap: wrap;
+   
+  }
+  
+  footer div {
+    text-align: center;
+  }
 }
