@@ -1,19 +1,19 @@
 .product-window {
   margin-top: 10vh;
-  position: absolute;
-  height: 90vh;
-  width: 100vw;
+  min-height: 90vh;
+  width: 99vw;
   background-color: #fff;
   z-index: 2;
   display: flex;
   align-items: center;
+  position: absolute;
+  justify-content: center;
+  gap: 1rem;
 }
 
-
-
 .big-panel {
-  width: 300px;
-  height: 300px;
+  width: 400px;
+  height: 400px;
   object-fit: cover;
   border-radius: 10px;
 }
@@ -21,8 +21,10 @@
 .display {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  width: 400px;
+}
+.description {
+  width: 50vw;
 }
 
 .product-window ul {
@@ -33,14 +35,128 @@
 }
 
 .product-window ul img {
-  width: calc(300px / 4.5);
-  height: calc(300px / 4.5);
+  width: calc(300px / 4);
+  height: calc(300px / 4);
   object-fit: cover;
   border-radius: 5px;
   cursor: pointer;
   transition: 0.2s ease;
+  border: 1px solid #cccbcb;
 }
 
 .product-window ul img:hover {
-    opacity: 0.70;
+  opacity: 0.7;
+}
+
+.btn {
+  position: absolute;
+  cursor: pointer;
+  top: 2rem;
+  left: 2rem;
+  background-color: transparent;
+  border: none;
+  border-radius: 50%;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.2s ease;
+}
+
+.btn:hover {
+  background-color: #ccc6c6;
+}
+
+.btn svg {
+  width: 36px;
+  height: 36px;
+}
+
+.buying svg {
+  width: 22px;
+}
+
+.buying div {
+  display: flex;
+  width: 150px;
+  background-color: hsl(223, 64%, 98%);
+  justify-content: space-between;
+  border-radius: 5px;
+}
+
+.buying div button {
+  background-color: #419f9c;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  width: 3rem;
+  transition: 0.2s ease;
+  border-radius: 5px;
+}
+
+.buying div button:hover {
+  background-color: hsla(217, 9%, 45%, 0.164);
+}
+
+.buying div p {
+  font-size: 1rem;
+}
+
+.buying {
+  display: flex;
+  margin-top: 10px;
+  gap: 1rem;
+}
+
+.buying button {
+  border: none;
+  border-radius: 5px;
+  width: 60%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #419f9c;
+  cursor: pointer;
+  gap: 1rem;
+  color: #fff;
+  font-weight: bold;
+  transition: 0.2s ease;
+}
+
+.buying button:hover {
+  background-color: #6bc2bf;
+}
+
+select {
+  outline: none;
+  height: 30px;
+  border: 1px solid #bfbfbf;
+
+}
+
+@media (max-width: 500px) {
+  .product-window {
+    flex-direction: column;
+  }
+  .big-panel {
+    width: 90vw;
+    height: 90vw;
+  }
+  .product-window ul {
+    width: 90vw;
+  }
+
+  .product-window ul img {
+    width: 17vw;
+    height: 17vw;
+  }
+  .display {
+    align-items: center;
+  }
+
+  .description {
+    width: 90vw;
+  }
 }

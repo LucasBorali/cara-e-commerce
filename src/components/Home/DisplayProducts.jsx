@@ -4,7 +4,7 @@ import ReactDOM from 'react-dom';
 import ProductWindow from './ProductWindow';
 
 const DisplayProducts = ({ title, description, products }) => {
-  const [viewProduct, setViewProduct] = useState(products[2])
+  const [viewProduct, setViewProduct] = useState(null)
 
 
 const showProductHandler = function(product){
@@ -67,7 +67,7 @@ const showProductHandler = function(product){
         </div>)}
       </div>
       {viewProduct !== null && ReactDOM.createPortal(
-          <ProductWindow product={viewProduct}/>,
+          <ProductWindow setViewProduct={setViewProduct} product={viewProduct}/>,
           document.getElementById('window-root')
         )}
     </div>

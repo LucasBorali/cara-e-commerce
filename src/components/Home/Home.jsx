@@ -12,7 +12,7 @@ import b4 from '../../Assets/banner/b4.jpg';
 import b18 from '../../Assets/banner/b18.jpg';
 import Banner from './Banner';
 
-const Home = ({ products }) => {
+const Home = ({ products}) => {
 
   return (
     <section className={classes.home}>
