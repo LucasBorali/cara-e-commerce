@@ -11,17 +11,20 @@ import { useState } from 'react';
 import Shop from './components/Shop/Shop';
 
 function App() {
-  const [window, setWindow] = useState('Shop')
+  const [window, setWindow] = useState('Shop');
+  const [cart, setCart] = useState([]);
 
   return (
     <div className="App">
-      <Navbar setWindow={setWindow} />
-      {window === 'Home' && <Home products={[summerItems, newArrivals]} />}
-      {window === 'Shop' && <Shop />}
-      {window === 'Blog' }
-      {window === 'About' }
-      {window === 'Contact' }
-      
+      <Navbar setCart={setCart} cart={cart} setWindow={setWindow} />
+      {window === 'Home' && (
+        <Home cart={cart} products={[summerItems, newArrivals]} />
+      )}
+      {window === 'Shop' && <Shop cart={cart} />}
+      {window === 'Blog'}
+      {window === 'About'}
+      {window === 'Contact'}
+
       <div className="news-letter">
         <img src={b14} alt="subscribe" />
         <div>
@@ -125,8 +128,8 @@ function App() {
           <h4>Install App</h4>
           <p>From App Store or Google Play</p>
           <div style={{ display: 'flex', flexDirection: 'row' }}>
-            <img src={app} alt="App Store" srcset="" />
-            <img src={play} alt="Play Store" srcset="" />
+            <img src={app} alt="App Store" srcSet="" />
+            <img src={play} alt="Play Store" srcSet="" />
           </div>
           <p>Secured Payment Gateways</p>
           <img src={pay} alt="payment methods" />

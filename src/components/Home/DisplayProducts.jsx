@@ -3,7 +3,7 @@ import classes from './DisplayProducts.module.css';
 import ReactDOM from 'react-dom';
 import ProductWindow from './ProductWindow';
 
-const DisplayProducts = ({ title, description, products }) => {
+const DisplayProducts = ({ title, description, products, cart }) => {
   const [viewProduct, setViewProduct] = useState(null)
 
 
@@ -54,9 +54,9 @@ const showProductHandler = function(product){
               viewBox="0 0 32 32"
               fill="none"
               stroke="#3D827A"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="2"
             >
               <path d="M6 6 L30 6 27 19 9 19 M27 23 L10 23 5 2 2 2" />
               <circle cx="25" cy="27" r="2" />
@@ -67,7 +67,7 @@ const showProductHandler = function(product){
         </div>)}
       </div>
       {viewProduct !== null && ReactDOM.createPortal(
-          <ProductWindow setViewProduct={setViewProduct} product={viewProduct}/>,
+          <ProductWindow cart={cart} setViewProduct={setViewProduct} product={viewProduct}/>,
           document.getElementById('window-root')
         )}
     </div>

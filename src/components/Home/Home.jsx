@@ -12,8 +12,7 @@ import b4 from '../../Assets/banner/b4.jpg';
 import b18 from '../../Assets/banner/b18.jpg';
 import Banner from './Banner';
 
-const Home = ({ products}) => {
-
+const Home = ({ products, cart }) => {
   return (
     <section className={classes.home}>
       <header className={classes.head}>
@@ -132,6 +131,7 @@ const Home = ({ products}) => {
         </div>
       </div>
       <DisplayProducts
+        cart={cart}
         description="Summer Collection New Modern Design"
         products={products[0]}
         title="Featured Products"
@@ -149,7 +149,7 @@ const Home = ({ products}) => {
         </h2>
         <button>Explore More</button>
       </Banner>
-      <DisplayProducts
+      <DisplayProducts cart={cart}
         description="Summer Collection New Modern Design"
         products={products[1]}
         title="New Arrivals"
