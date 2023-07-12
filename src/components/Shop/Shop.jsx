@@ -11,8 +11,8 @@ const Shop = ({ cart }) => {
   return (
     <section className={classes.shop}>
       <Banner banner={b1}>
-        <h1 style={{ color: '#fff' }}>#stayhome</h1>
-        <p style={{ color: '#fff' }}>Save more with coupons & up to 70% off!</p>
+        <h1 >#stayhome</h1>
+        <p >Save more with coupons & up to 70% off!</p>
       </Banner>
       <DisplayProducts cart={cart} products={products} />
     </section>

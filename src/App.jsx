@@ -1,5 +1,9 @@
 import './App.css';
 import Home from './components/Home/Home';
+import Shop from './components/Shop/Shop';
+import Blog from './components/Blog/Blog';
+import About from './components/About/About';
+import Contact from './components/Contact/Contact';
 import Navbar from './components/Navbar/Navbar';
 import { summerItems, newArrivals } from './Assets/products/products';
 import b14 from './Assets/banner/b14.png';
@@ -8,10 +12,9 @@ import app from './Assets/pay/app.jpg';
 import play from './Assets/pay/play.jpg';
 import pay from './Assets/pay/pay.png';
 import { useState } from 'react';
-import Shop from './components/Shop/Shop';
 
 function App() {
-  const [window, setWindow] = useState('Shop');
+  const [window, setWindow] = useState('Blog');
   const [cart, setCart] = useState([]);
 
   return (
@@ -21,9 +24,9 @@ function App() {
         <Home cart={cart} products={[summerItems, newArrivals]} />
       )}
       {window === 'Shop' && <Shop cart={cart} />}
-      {window === 'Blog'}
-      {window === 'About'}
-      {window === 'Contact'}
+      {window === 'Blog' && <Blog />}
+      {window === 'About' && <About />}
+      {window === 'Contact' && <Contact />}
 
       <div className="news-letter">
         <img src={b14} alt="subscribe" />
