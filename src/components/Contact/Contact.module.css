@@ -1,8 +1,100 @@
 .contact {
-    padding-top: 8vh;
-    color: #ffffffc1;
+  padding-top: 8vh;
+  color: #ffffffc1;
 }
 
 .contact h1 {
-    font-size: 2.5rem;
+  font-size: 2.5rem;
+}
+
+.form-container {
+  color: #303030;
+  display: flex;
+  align-items: center;
+  width: 90vw;
+  margin: auto;
+  border: 2px solid #d8d8d8;
+  justify-content: center;
+  padding: 3rem 0;
+  margin-bottom: 1rem;
+}
+
+.form-container form {
+  display: flex;
+  flex-direction: column;
+  width: 47%;
+  text-align: left;
+}
+.form-container form p {
+  margin: 0;
+  color: #c5c5c5;
+  font-weight: bold;
+}
+
+.form-container form input {
+  min-height: 2rem;
+  margin: 10px 0;
+  outline: none;
+  border: 1px solid #d8d8d8;
+  padding-left: 10px;
+}
+
+.message {
+  height: 7rem;
+}
+
+.form-container form button {
+  width: 10rem;
+  height: 2.5rem;
+  background-color: #419f9c;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  color: #fff;
+  font-weight: bolder;
+}
+
+.people-container {
+  width: 47%;
+}
+
+.people {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 10px 0;
+  justify-content: center;
+}
+
+.people img {
+  height: 100px;
+  margin: 0;
+}
+
+.people div {
+  text-align: left;
+}
+
+.people h3 {
+  margin: 0;
+}
+
+.people p {
+  margin: 0;
+  color: #8c8c8c;
+}
+
+@media (max-width: 500px) {
+  .form-container {
+    flex-direction: column;
+    overflow-x: hidden;
+  }
+
+  .form-container form {
+    width: 90%;
+  }
+
+  .people-container {
+    width: 90%;
+  }
 }
