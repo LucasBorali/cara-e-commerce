@@ -1,15 +1,13 @@
 .product-window {
-  margin-top: 10vh;
+  padding-top: 10vh;
   min-height: 90vh;
-  width: 99vw;
+  width: 100vw;
   background-color: #fff;
-  z-index: 2;
   display: flex;
   align-items: center;
-  position: absolute;
   justify-content: center;
   gap: 1rem;
-  z-index: 1;
+ 
 }
 
 .big-panel {
@@ -17,6 +15,7 @@
   height: 400px;
   object-fit: cover;
   border-radius: 10px;
+  margin: 0;
 }
 
 .display {
@@ -24,6 +23,7 @@
   flex-direction: column;
   width: 400px;
 }
+
 .description {
   width: 50vw;
 }
@@ -43,6 +43,7 @@
   cursor: pointer;
   transition: 0.2s ease;
   border: 1px solid #cccbcb;
+  
 }
 
 .product-window ul img:hover {
@@ -52,7 +53,7 @@
 .btn {
   position: absolute;
   cursor: pointer;
-  top: 2rem;
+  top: 6rem;
   left: 2rem;
   background-color: transparent;
   border: none;
@@ -134,7 +135,6 @@ select {
   outline: none;
   height: 30px;
   border: 1px solid #bfbfbf;
-
 }
 
 @media (max-width: 500px) {

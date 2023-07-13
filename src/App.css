@@ -2,6 +2,10 @@
   text-align: center;
 }
 
+#show-product-window{
+overflow: hidden;
+}
+
 .news-letter {
   background-color: #060f1e;
   height: 200px;

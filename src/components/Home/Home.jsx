@@ -12,7 +12,7 @@ import b4 from '../../Assets/banner/b4.jpg';
 import b18 from '../../Assets/banner/b18.jpg';
 import Banner from './Banner';
 
-const Home = ({ products, cart }) => {
+const Home = ({ products, cart, setWindow }) => {
   return (
     <section className={classes.home}>
       <header className={classes.head}>
@@ -131,6 +131,7 @@ const Home = ({ products, cart }) => {
         </div>
       </div>
       <DisplayProducts
+        setWindow={setWindow}
         cart={cart}
         description="Summer Collection New Modern Design"
         products={products[0]}
@@ -149,7 +150,9 @@ const Home = ({ products, cart }) => {
         </h2>
         <button>Explore More</button>
       </Banner>
-      <DisplayProducts cart={cart}
+      <DisplayProducts
+        setWindow={setWindow}
+        cart={cart}
         description="Summer Collection New Modern Design"
         products={products[1]}
         title="New Arrivals"

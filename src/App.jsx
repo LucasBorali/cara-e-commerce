@@ -14,16 +14,26 @@ import pay from './Assets/pay/pay.png';
 import { useState } from 'react';
 
 function App() {
-  const [window, setWindow] = useState('Blog');
+  const [window, setWindow] = useState('Home');
   const [cart, setCart] = useState([]);
 
   return (
     <div className="App">
       <Navbar setCart={setCart} cart={cart} setWindow={setWindow} />
+
+      
+       <div id="show-product-window"></div>
+
       {window === 'Home' && (
-        <Home cart={cart} products={[summerItems, newArrivals]} />
+        <Home
+          setWindow={[setWindow, window]}
+          cart={cart}
+          products={[summerItems, newArrivals]}
+        />
       )}
-      {window === 'Shop' && <Shop cart={cart} />}
+      {window === 'Shop' && (
+        <Shop setWindow={[setWindow, window]} cart={cart} />
+      )}
       {window === 'Blog' && <Blog />}
       {window === 'About' && <About />}
       {window === 'Contact' && <Contact />}

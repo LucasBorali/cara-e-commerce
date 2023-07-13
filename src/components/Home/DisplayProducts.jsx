@@ -3,12 +3,20 @@ import classes from './DisplayProducts.module.css';
 import ReactDOM from 'react-dom';
 import ProductWindow from './ProductWindow';
 
-const DisplayProducts = ({ title, description, products, cart }) => {
+const DisplayProducts = ({ title, description, products, cart}) => {
   const [viewProduct, setViewProduct] = useState(null)
+
+  const [coordinate, setCoordinate] = useState(0)
 
 
 const showProductHandler = function(product){
   setViewProduct(product)
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth'
+  });
+  setCoordinate(window.scrollY)
+  
 }
 
   return (
@@ -67,8 +75,8 @@ const showProductHandler = function(product){
         </div>)}
       </div>
       {viewProduct !== null && ReactDOM.createPortal(
-          <ProductWindow cart={cart} setViewProduct={setViewProduct} product={viewProduct}/>,
-          document.getElementById('window-root')
+          <ProductWindow coordinate={coordinate} cart={cart} setViewProduct={setViewProduct} product={viewProduct}/>,
+          document.getElementById('show-product-window')
         )}
     </div>
   );

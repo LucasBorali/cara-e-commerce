@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import classes from './ProductWindow.module.css';
 
-const ProductWindow = ({ product, setViewProduct, cart }) => {
+const ProductWindow = ({ product, setViewProduct, cart, coordinate }) => {
   const [panel, setPanel] = useState(product.img[0]);
   const [quantity, setQuantity] = useState(1);
 
@@ -11,6 +11,11 @@ const ProductWindow = ({ product, setViewProduct, cart }) => {
 
   const returnHandler = function () {
     setViewProduct(null);
+
+    window.scrollTo({
+      top: coordinate,
+      behavior: 'smooth',
+    });
   };
 
   const decreaseHandler = function () {
@@ -89,7 +94,6 @@ const ProductWindow = ({ product, setViewProduct, cart }) => {
                 strokeWidth="2"
                 strokeLinecap="round"
                 strokeLinejoin="round"
-                
               >
                 <line x1="5" y1="12" x2="19" y2="12"></line>
               </svg>
@@ -104,7 +108,6 @@ const ProductWindow = ({ product, setViewProduct, cart }) => {
                 strokeWidth="2"
                 strokeLinecap="round"
                 strokeLinejoin="round"
-               
               >
                 <line x1="12" y1="5" x2="12" y2="19"></line>
                 <line x1="5" y1="12" x2="19" y2="12"></line>
