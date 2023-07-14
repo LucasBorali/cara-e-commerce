@@ -14,7 +14,7 @@ import pay from './Assets/pay/pay.png';
 import { useState } from 'react';
 
 function App() {
-  const [window, setWindow] = useState('Contact');
+  const [window, setWindow] = useState('Home');
   const [cart, setCart] = useState([]);
 
   return (
