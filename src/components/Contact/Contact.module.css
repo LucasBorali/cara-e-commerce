@@ -1,6 +1,6 @@
 .contact {
   padding-top: 8vh;
-  color: #ffffffc1;
+  color: var(--grey);
 }
 
 .contact h1 {
@@ -8,7 +8,7 @@
 }
 
 .form-container {
-  color: #303030;
+  color: var(--color-container);
   display: flex;
   align-items: center;
   width: 90vw;
@@ -21,7 +21,7 @@
 
 .map-container {
   margin: 1rem;
-  color: #303030;
+  color: var(--color-container);
   display: flex;
   justify-content: space-around;
 }
@@ -82,11 +82,11 @@
 .form-container form button {
   width: 10rem;
   height: 2.5rem;
-  background-color: #419f9c;
+  background-color: var(--myrtle-green);
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  color: #fff;
+  color: var(--white);
   font-weight: bolder;
 }
 

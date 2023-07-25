@@ -2,24 +2,23 @@
   text-align: center;
 }
 
-#show-product-window{
-overflow: hidden;
+#show-product-window {
+  overflow: hidden;
 }
 
 .news-letter {
-  background-color: #060f1e;
+  background-color: var(--News-letter-background);
   height: 200px;
   position: relative;
   overflow: hidden;
-  color: #fff;
+  color: var(--white);
   display: flex;
   align-items: center;
   justify-content: space-around;
- 
 }
 
 .news-letter span {
-  color: #ffcf3d;
+  color: var(--news-letter-span);
 }
 
 .news-letter img {
@@ -37,7 +36,7 @@ overflow: hidden;
   width: 300px;
   outline: none;
   border: none;
-  border-radius: 10px 0 0 10px; 
+  border-radius: 10px 0 0 10px;
   font-size: 1rem;
   padding-left: 10px;
 }
@@ -45,9 +44,9 @@ overflow: hidden;
 .subscribe button {
   height: 3rem;
   width: 100px;
-  background-color: #3d827a;
+  background-color: var(--myrtle-green);
   border: none;
-  color: #fff;
+  color: var(--white);
   border-radius: 0 10px 10px 0;
   cursor: pointer;
 }
@@ -59,17 +58,14 @@ overflow: hidden;
   flex-direction: row;
 }
 
-.icons svg{
+.icons svg {
   width: 16px;
   height: 16px;
-  
-
 }
 
 footer {
   display: flex;
   justify-content: space-around;
-  
 }
 
 footer div {
@@ -82,7 +78,7 @@ footer ul {
   display: flex;
   flex-direction: column;
   padding: 0;
-  gap: 5px
+  gap: 5px;
 }
 
 footer h4 {
@@ -95,10 +91,9 @@ footer h4 {
   }
 
   footer {
-   flex-wrap: wrap;
-   
+    flex-wrap: wrap;
   }
-  
+
   footer div {
     text-align: center;
   }

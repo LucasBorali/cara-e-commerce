@@ -38,7 +38,7 @@
 }
 
 .blog-post a:hover {
-    color: #419f9c;
+    color: var(--verdigris);
 }
 
 

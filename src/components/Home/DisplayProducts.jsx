@@ -50,7 +50,7 @@ const showProductHandler = function(product){
           }}>
           <p
             style={{
-              color: '#3D827A',
+              color: 'var(--myrtle-green)',
             }}
           >
             ${product.price}

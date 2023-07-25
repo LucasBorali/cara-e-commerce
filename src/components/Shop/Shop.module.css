@@ -1,6 +1,6 @@
 .shop {
     padding-top: 8vh;
-    color: #ffffffc1;
+    color: var(--grey);
 }
 
 .shop h1 {

@@ -1,6 +1,6 @@
 .about {
     padding-top: 8vh;
-    color: #e3ccccc1;
+    color: var(--grey);
 }
 
 .info {

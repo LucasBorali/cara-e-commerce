@@ -22,9 +22,9 @@
 }
 
 .banner button:hover {
-  background-color: #ffffff;
+  background-color: var(--white);
 }
 
 .banner span {
-  color: #DB3738;
+  color: var(--poppy);
 }

@@ -1,3 +1,22 @@
+:root {
+  --News-letter-background: #060f1e;
+  --white: #fff;
+  --news-letter-span: #ffcf3d;
+  --myrtle-green: #3d827a;
+  --verdigris: #6bc2bf;
+  --lavender: #e3e6f2;
+  --lavender-hover: #b5b7c1;
+  --platinum: #e3e2e2;
+  --overlay: #36363826;
+  --box-shadow: rgba(0, 0, 0, 0.108);
+  --cadet-grey: #A1A0A0;
+  --grey: #ffffffc1;
+  --poppy: #DB3738;
+  --color-container: #303030
+}
+
+
+
 body {
   margin: 0;
   font-family: "Roboto", sans-serif;

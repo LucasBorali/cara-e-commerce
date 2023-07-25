@@ -6,7 +6,7 @@
 .display-product p {
     font-weight: bold;
     font-size: 1.2rem;
-    color: rgb(161, 160, 160);
+    color: var(--cadet-grey);
 }
 
 .container {
@@ -21,8 +21,8 @@
     width: 200px;
     padding: 15px;
     border-radius: 20px;
-    border: 1px solid rgb(219, 219, 219);
-    box-shadow: 0 0 12px rgba(0, 0, 0, 0.108);
+    border: 1px solid var(--platinum);
+    box-shadow: 0 0 12px var(--box-shadow);
     display: flex;
     flex-direction: column;
     align-items: start;

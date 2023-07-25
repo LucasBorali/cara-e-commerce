@@ -1,6 +1,6 @@
 .blog {
     padding-top: 8vh;
-    color: #ffffffe2;
+    color: var(--grey);
 }
 
 .blog h1 {

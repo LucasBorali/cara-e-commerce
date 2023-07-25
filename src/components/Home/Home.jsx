@@ -35,7 +35,7 @@ const Home = ({ products, cart, setWindow }) => {
           <p
             style={{
               fontSize: '3rem',
-              color: '#3D827A',
+              color: 'var(--myrtle-green)',
             }}
           >
             On all products
