@@ -11,29 +11,55 @@ import logo from './Assets/logo.png';
 import app from './Assets/pay/app.jpg';
 import play from './Assets/pay/play.jpg';
 import pay from './Assets/pay/pay.png';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import { useSelector } from 'react-redux';
+
+let isInitial = true;
 
 function App() {
   const [window, setWindow] = useState('Home');
-  const [cart, setCart] = useState([]);
+  const cart = useSelector(state => state.cart);
+
+  useEffect(() => {
+    const sendCartData = async () => {
+      const response = await fetch(
+        'https://cara-e-commerce-default-rtdb.firebaseio.com/cart.json',
+        {
+          method: 'PUT',
+          body: JSON.stringify(cart),
+        }
+      );
+
+      if (!response.ok) {
+        throw new Error('Sending cart data failed');
+      }
+
+      const responseData = await response.json();
+    };
+
+    if (isInitial) {
+      isInitial = false;
+      return;
+    }
+
+    sendCartData().catch(error => {
+      console.log('eu não aguento maisss');
+    });
+  }, [cart]);
 
   return (
     <div className="App">
-      <Navbar setCart={setCart} cart={cart} setWindow={setWindow} />
+      <Navbar setWindow={setWindow} />
 
-      
-       <div id="show-product-window"></div>
+      <div id="show-product-window"></div>
 
       {window === 'Home' && (
         <Home
           setWindow={[setWindow, window]}
-          cart={cart}
           products={[summerItems, newArrivals]}
         />
       )}
-      {window === 'Shop' && (
-        <Shop setWindow={[setWindow, window]} cart={cart} />
-      )}
+      {window === 'Shop' && <Shop setWindow={[setWindow, window]} />}
       {window === 'Blog' && <Blog />}
       {window === 'About' && <About />}
       {window === 'Contact' && <Contact />}

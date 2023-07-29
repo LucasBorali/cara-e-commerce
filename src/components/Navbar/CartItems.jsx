@@ -1,15 +1,20 @@
 import React from 'react';
 import classes from './CartItems.module.css';
+import { useDispatch, useSelector } from 'react-redux';
+import { cartActions } from '../../store/cart-slice';
 
-const CartItems = ({ cart, setCart }) => {
+const CartItems = () => {
+  const dispatch = useDispatch()
+  const cartItems = useSelector(state => state.cart.items);
+
   const removeItemHandler = function (item) {
-    const newCart = cart.filter(product => product !== item);
-    setCart(newCart);
+    dispatch(cartActions.removeItemFromCart(item))
+    
   };
 
   return (
     <ul className={classes['cart-item']}>
-      {cart.map(item => (
+      {cartItems.map(item => (
         <li key={item.name} className={classes['list-item']}>
           <img className={classes.image} src={item.img[0]} alt="product" />
           <div>
@@ -25,10 +30,10 @@ const CartItems = ({ cart, setCart }) => {
               viewBox="0 0 24 24"
               fill="none"
               stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              class="feather feather-trash-2"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              className="feather feather-trash-2"
             >
               <polyline points="3 6 5 6 21 6"></polyline>
               <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>

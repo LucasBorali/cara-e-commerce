@@ -12,7 +12,7 @@ import b4 from '../../Assets/banner/b4.jpg';
 import b18 from '../../Assets/banner/b18.jpg';
 import Banner from './Banner';
 
-const Home = ({ products, cart, setWindow }) => {
+const Home = ({ products, setWindow }) => {
   return (
     <section className={classes.home}>
       <header className={classes.head}>
@@ -51,7 +51,7 @@ const Home = ({ products, cart, setWindow }) => {
             Save more with coupons 8 up to 70% off
           </p>
           <button>
-            <img style={{}} src={buttonImage} alt="" srcset="" />
+            <img style={{}} src={buttonImage} alt="" srcSet="" />
             <span
               style={{
                 position: 'absolute',
@@ -64,7 +64,7 @@ const Home = ({ products, cart, setWindow }) => {
       </header>
       <div className={classes.features}>
         <div>
-          <img src={features[0]} alt="Free shipping" srcset="" />
+          <img src={features[0]} alt="Free shipping" srcSet="" />
           <p
             style={{
               backgroundColor: '#DBF4F6',
@@ -75,7 +75,7 @@ const Home = ({ products, cart, setWindow }) => {
           </p>
         </div>
         <div>
-          <img src={features[1]} alt="Free shipping" srcset="" />
+          <img src={features[1]} alt="Free shipping" srcSet="" />
           <p
             style={{
               backgroundColor: '#F8E7F1',
@@ -86,7 +86,7 @@ const Home = ({ products, cart, setWindow }) => {
           </p>
         </div>
         <div>
-          <img src={features[2]} alt="Free shipping" srcset="" />
+          <img src={features[2]} alt="Free shipping" srcSet="" />
           <p
             style={{
               backgroundColor: '#EAF5D8',
@@ -97,7 +97,7 @@ const Home = ({ products, cart, setWindow }) => {
           </p>
         </div>
         <div>
-          <img src={features[3]} alt="Free shipping" srcset="" />
+          <img src={features[3]} alt="Free shipping" srcSet="" />
           <p
             style={{
               backgroundColor: '#DBF4F6',
@@ -108,7 +108,7 @@ const Home = ({ products, cart, setWindow }) => {
           </p>
         </div>
         <div>
-          <img src={features[4]} alt="Free shipping" srcset="" />
+          <img src={features[4]} alt="Free shipping" srcSet="" />
           <p
             style={{
               backgroundColor: '#E3DDF4',
@@ -119,7 +119,7 @@ const Home = ({ products, cart, setWindow }) => {
           </p>
         </div>
         <div>
-          <img src={features[5]} alt="Free shipping" srcset="" />
+          <img src={features[5]} alt="Free shipping" srcSet="" />
           <p
             style={{
               backgroundColor: '#F6E5DB',
@@ -130,13 +130,14 @@ const Home = ({ products, cart, setWindow }) => {
           </p>
         </div>
       </div>
+
       <DisplayProducts
         setWindow={setWindow}
-        cart={cart}
         description="Summer Collection New Modern Design"
         products={products[0]}
         title="Featured Products"
       />
+
       <Banner color="#dad7d7" alignItems="center" banner={b2}>
         <p
           style={{
@@ -152,7 +153,6 @@ const Home = ({ products, cart, setWindow }) => {
       </Banner>
       <DisplayProducts
         setWindow={setWindow}
-        cart={cart}
         description="Summer Collection New Modern Design"
         products={products[1]}
         title="New Arrivals"

@@ -3,8 +3,11 @@ import classes from './Navbar.module.css';
 import ReactDOM from 'react-dom';
 import logo from '../../Assets/logo.png';
 import CartItems from './CartItems';
+import { useSelector } from 'react-redux';
 
-const Navbar = ({ setWindow, cart, setCart }) => {
+const Navbar = ({ setWindow }) => {
+  const cartItems = useSelector(state => state.cart.items);
+
   const [displayMenu, setDisplayMenu] = useState(false);
   const [displayCart, setDisplayCart] = useState(false);
 
@@ -23,7 +26,7 @@ const Navbar = ({ setWindow, cart, setCart }) => {
   const displayCartHandler = function (e) {
     if (!displayCart) {
       setDisplayCart(true);
-    } else if (e.target.className !== 'Navbar_cart__tzwTi') {
+    } else if (e.target.className === 'Navbar_overlay__bvbyb') {
       setDisplayCart(false);
     }
   };
@@ -98,8 +101,8 @@ const Navbar = ({ setWindow, cart, setCart }) => {
           ReactDOM.createPortal(
             <div onClick={displayCartHandler} className={classes.overlay}>
               <div className={classes.cart}>
-                <p>{cart.length === 0 ? 'Empty Cart' : 'Cart'}</p>
-                <CartItems setCart={setCart} cart={cart} />
+                <p>{cartItems.length === 0 ? 'Empty Cart' : 'Cart'}</p>
+                <CartItems />
               </div>
             </div>,
             document.getElementById('window-root')

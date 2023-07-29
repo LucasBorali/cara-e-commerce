@@ -1,7 +1,11 @@
 import React, { useState } from 'react';
 import classes from './ProductWindow.module.css';
+import { useDispatch } from 'react-redux';
+import { cartActions } from '../../store/cart-slice';
 
-const ProductWindow = ({ product, setViewProduct, cart, coordinate }) => {
+const ProductWindow = ({ product, setViewProduct, coordinate }) => {
+  const dispatch = useDispatch();
+
   const [panel, setPanel] = useState(product.img[0]);
   const [quantity, setQuantity] = useState(1);
 
@@ -31,13 +35,15 @@ const ProductWindow = ({ product, setViewProduct, cart, coordinate }) => {
   };
 
   const addCartHandler = function () {
-    const size = document.getElementById('size');
-    const item = {
-      ...product,
-      quantity: quantity,
-      size: size.value,
-    };
-    cart.push(item);
+    // const size = document.getElementById('size');
+
+    dispatch(
+      cartActions.addItemToCart({
+        ...product,
+        quantity: quantity,
+        // size: size.value,
+      })
+    );
   };
 
   return (

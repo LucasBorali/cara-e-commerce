@@ -6,7 +6,7 @@ import {blog} from '../../Assets/blog/blog'
 import BlogPost from './BlogPost'
 
 const Blog = () => {
-  console.log(blog)
+  
   return (
     <section className={classes.blog}>
         <Banner banner={b19}>

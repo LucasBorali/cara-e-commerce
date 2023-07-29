@@ -68,7 +68,7 @@ export const blog = [
   ),
   new BlogPost(
     b1,
-    '13/01',
+    '07/01',
     'The Cotton-Jersey Zip-Up Hoodie',
     'Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio nemo adipisci modi dolorem quis voluptatem, exercitationem porro voluptas, nesciunt excepturi unde sunt, nulla magnam. Ratione nisi qui consequuntur! Voluptatibus, nostrum.',
     '#'

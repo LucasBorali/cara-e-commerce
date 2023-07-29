@@ -5,7 +5,7 @@ import classes from './Shop.module.css';
 import DisplayProducts from '../Home/DisplayProducts';
 import { summerItems, newArrivals } from '../../Assets/products/products';
 
-const Shop = ({ cart, setWindow }) => {
+const Shop = ({ setWindow }) => {
   const products = [...summerItems, ...newArrivals];
 
   return (
@@ -14,7 +14,7 @@ const Shop = ({ cart, setWindow }) => {
         <h1>#stayhome</h1>
         <p>Save more with coupons & up to 70% off!</p>
       </Banner>
-      <DisplayProducts setWindow={setWindow} cart={cart} products={products} />
+      <DisplayProducts setWindow={setWindow} products={products} />
     </section>
   );
 };
