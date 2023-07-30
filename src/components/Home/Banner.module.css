@@ -7,9 +7,8 @@
   justify-content: center;
   font-weight: bold;
   height: auto;
+  color: var(--grey);
 }
-
-
 
 .banner button {
   padding: 10px 20px;

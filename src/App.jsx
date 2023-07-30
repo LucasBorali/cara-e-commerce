@@ -12,40 +12,31 @@ import app from './Assets/pay/app.jpg';
 import play from './Assets/pay/play.jpg';
 import pay from './Assets/pay/pay.png';
 import { useEffect, useState } from 'react';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { fetchCartData, sendCartData } from './store/cart-actions';
 
-let isInitial = true;
 
 function App() {
+  const dispatch = useDispatch();
   const [window, setWindow] = useState('Home');
   const cart = useSelector(state => state.cart);
+  const [isInitial, setIsInitial] = useState(true);
 
   useEffect(() => {
-    const sendCartData = async () => {
-      const response = await fetch(
-        'https://cara-e-commerce-default-rtdb.firebaseio.com/cart.json',
-        {
-          method: 'PUT',
-          body: JSON.stringify(cart),
-        }
-      );
+    dispatch(fetchCartData());
 
-      if (!response.ok) {
-        throw new Error('Sending cart data failed');
-      }
+  }, [dispatch]);
 
-      const responseData = await response.json();
-    };
-
+  useEffect(() => {
     if (isInitial) {
-      isInitial = false;
+      setIsInitial();
       return;
     }
 
-    sendCartData().catch(error => {
-      console.log('eu não aguento maisss');
-    });
-  }, [cart]);
+    if (cart.changed) {
+      dispatch(sendCartData(cart));
+    }
+  }, [cart, dispatch]);
 
   return (
     <div className="App">

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import heroImage from '../../Assets/hero4.png';
 import buttonImage from '../../Assets/button.png';
 import classes from './Home.module.css';
@@ -11,8 +11,23 @@ import b7 from '../../Assets/banner/b7.jpg';
 import b4 from '../../Assets/banner/b4.jpg';
 import b18 from '../../Assets/banner/b18.jpg';
 import Banner from './Banner';
+import Loading from '../Loading';
 
-const Home = ({ products, setWindow }) => {
+const Home = ({ setWindow }) => {
+  const [fetchedProducts, setfetchedProducts] = useState(false);
+
+  const fetchProducts = async () => {
+    const response = await fetch(
+      'https://cara-e-commerce-default-rtdb.firebaseio.com/commerce-products.json'
+    );
+    const data = await response.json();
+    return data;
+  };
+
+  useEffect(() => {
+    fetchProducts().then(data => setfetchedProducts(data));
+  }, []);
+
   return (
     <section className={classes.home}>
       <header className={classes.head}>
@@ -131,12 +146,16 @@ const Home = ({ products, setWindow }) => {
         </div>
       </div>
 
-      <DisplayProducts
-        setWindow={setWindow}
-        description="Summer Collection New Modern Design"
-        products={products[0]}
-        title="Featured Products"
-      />
+      {fetchedProducts ? (
+        <DisplayProducts
+          setWindow={setWindow}
+          description="Summer Collection New Modern Design"
+          products={fetchedProducts.summerItems}
+          title="Featured Products"
+        />
+      ) : (
+        <Loading />
+      )}
 
       <Banner color="#dad7d7" alignItems="center" banner={b2}>
         <p
@@ -151,12 +170,16 @@ const Home = ({ products, setWindow }) => {
         </h2>
         <button>Explore More</button>
       </Banner>
-      <DisplayProducts
-        setWindow={setWindow}
-        description="Summer Collection New Modern Design"
-        products={products[1]}
-        title="New Arrivals"
-      />
+
+      {fetchedProducts ? (
+        <DisplayProducts
+          setWindow={setWindow}
+          description="Summer Collection New Modern Design"
+          products={fetchedProducts.newArrivals}
+          title="New Arrivals"
+        />
+      ) : <Loading />}
+
       <div className={classes['banner-container']}>
         <Banner
           color="#fff"
