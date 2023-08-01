@@ -4,8 +4,9 @@ import ReactDOM from 'react-dom';
 import logo from '../../Assets/logo.png';
 import CartItems from './CartItems';
 import { useSelector } from 'react-redux';
+import { NavLink } from 'react-router-dom';
 
-const Navbar = ({ setWindow }) => {
+const Navbar = () => {
   const cartItems = useSelector(state => state.cart.items);
 
   const [displayMenu, setDisplayMenu] = useState(false);
@@ -31,10 +32,6 @@ const Navbar = ({ setWindow }) => {
     }
   };
 
-  const changeWindowHandler = function (e) {
-    setWindow(e.target.innerText);
-  };
-
   return (
     <nav className={classes.navbar}>
       <img src={logo} alt="logo" />
@@ -42,21 +39,21 @@ const Navbar = ({ setWindow }) => {
       {displayMenu &&
         ReactDOM.createPortal(
           <div onClick={overlayHandler} className={classes.overlay}>
-            <ul onClick={changeWindowHandler} className={classes.menu}>
+            <ul className={classes.menu}>
               <li>
-                <a href="#">Home</a>
+                <NavLink end className={({isActive})=> isActive ? classes.active : undefined} to="/">Home</NavLink>
               </li>
               <li>
-                <a href="#">Shop</a>
+                <NavLink end className={({isActive})=> isActive ? classes.active : undefined} to="/shop">Shop</NavLink>
               </li>
               <li>
-                <a href="#">Blog</a>
+                <NavLink end className={({isActive})=> isActive ? classes.active : undefined} to="/blog">Blog</NavLink>
               </li>
               <li>
-                <a href="#">About</a>
+                <NavLink end className={({isActive})=> isActive ? classes.active : undefined} to="/about">About</NavLink>
               </li>
               <li>
-                <a href="#">Contact</a>
+                <NavLink end className={({isActive})=> isActive ? classes.active : undefined} to="/contact">Contact</NavLink>
               </li>
             </ul>
           </div>,
@@ -78,21 +75,21 @@ const Navbar = ({ setWindow }) => {
             </svg>
           </button>
         ) : (
-          <ul onClick={changeWindowHandler}>
+          <ul>
             <li>
-              <a href="#">Home</a>
+              <NavLink end className={({isActive})=> isActive ? classes.active : undefined} to="/">Home</NavLink>
             </li>
             <li>
-              <a href="#">Shop</a>
+              <NavLink end className={({isActive})=> isActive ? classes.active : undefined} to="/shop">Shop</NavLink>
             </li>
             <li>
-              <a href="#">Blog</a>
+              <NavLink end className={({isActive})=> isActive ? classes.active : undefined} to="/blog">Blog</NavLink>
             </li>
             <li>
-              <a href="#">About</a>
+              <NavLink end className={({isActive})=> isActive ? classes.active : undefined} to="/about">About</NavLink>
             </li>
             <li>
-              <a href="#">Contact</a>
+              <NavLink end className={({isActive})=> isActive ? classes.active : undefined} to="/contact">Contact</NavLink>
             </li>
           </ul>
         )}

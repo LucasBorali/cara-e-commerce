@@ -1,10 +1,14 @@
 import React, { useState } from 'react';
 import classes from './ProductWindow.module.css';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { cartActions } from '../../store/cart-slice';
+import { displayActions } from '../../store/display-slice';
+import { Link } from 'react-router-dom';
 
-const ProductWindow = ({ product, setViewProduct, coordinate }) => {
+const ProductWindow = () => {
   const dispatch = useDispatch();
+
+  const { product } = useSelector(state => state.display);
 
   const [panel, setPanel] = useState(product.img[0]);
   const [quantity, setQuantity] = useState(1);
@@ -13,14 +17,7 @@ const ProductWindow = ({ product, setViewProduct, coordinate }) => {
     setPanel(img);
   };
 
-  const returnHandler = function () {
-    setViewProduct(null);
-
-    window.scrollTo({
-      top: coordinate,
-      behavior: 'smooth',
-    });
-  };
+  const returnHandler = function () {};
 
   const decreaseHandler = function () {
     if (quantity > 1) {
@@ -48,20 +45,22 @@ const ProductWindow = ({ product, setViewProduct, coordinate }) => {
 
   return (
     <div className={classes['product-window']}>
-      <button onClick={returnHandler} className={classes.btn}>
-        <svg
-          width="800px"
-          height="800px"
-          viewBox="0 0 24 24"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            d="M14.2893 5.70708C13.8988 5.31655 13.2657 5.31655 12.8751 5.70708L7.98768 10.5993C7.20729 11.3805 7.2076 12.6463 7.98837 13.427L12.8787 18.3174C13.2693 18.7079 13.9024 18.7079 14.293 18.3174C14.6835 17.9269 14.6835 17.2937 14.293 16.9032L10.1073 12.7175C9.71678 12.327 9.71678 11.6939 10.1073 11.3033L14.2893 7.12129C14.6799 6.73077 14.6799 6.0976 14.2893 5.70708Z"
-            fill="#585555"
-          />
-        </svg>
-      </button>
+      <Link to="javascript:void(0)">
+        <button onClick={returnHandler} className={classes.btn}>
+          <svg
+            width="800px"
+            height="800px"
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M14.2893 5.70708C13.8988 5.31655 13.2657 5.31655 12.8751 5.70708L7.98768 10.5993C7.20729 11.3805 7.2076 12.6463 7.98837 13.427L12.8787 18.3174C13.2693 18.7079 13.9024 18.7079 14.293 18.3174C14.6835 17.9269 14.6835 17.2937 14.293 16.9032L10.1073 12.7175C9.71678 12.327 9.71678 11.6939 10.1073 11.3033L14.2893 7.12129C14.6799 6.73077 14.6799 6.0976 14.2893 5.70708Z"
+              fill="#585555"
+            />
+          </svg>
+        </button>
+      </Link>
       <div className={classes.display}>
         <img className={classes['big-panel']} src={panel} alt="" srcSet="" />
         <ul>
