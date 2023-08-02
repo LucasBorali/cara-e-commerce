@@ -7,6 +7,7 @@ import Loading from '../Loading';
 
 const Shop = ({ setWindow }) => {
   const [fetchedProducts, setfetchedProducts] = useState(false);
+  window.scrollTo(0, 0);
 
   const fetchProducts = async () => {
     const response = await fetch(

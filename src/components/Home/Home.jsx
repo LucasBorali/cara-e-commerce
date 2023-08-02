@@ -15,6 +15,7 @@ import Loading from '../Loading';
 
 const Home = ({ setWindow }) => {
   const [fetchedProducts, setfetchedProducts] = useState(false);
+ 
 
   const fetchProducts = async () => {
     const response = await fetch(

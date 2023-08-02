@@ -2,11 +2,12 @@ import React, { useState } from 'react';
 import classes from './ProductWindow.module.css';
 import { useDispatch, useSelector } from 'react-redux';
 import { cartActions } from '../../store/cart-slice';
-import { displayActions } from '../../store/display-slice';
 import { Link } from 'react-router-dom';
 
 const ProductWindow = () => {
   const dispatch = useDispatch();
+  // const navigate = useNavigate();
+  window.scrollTo(0, 0);
 
   const { product } = useSelector(state => state.display);
 
@@ -17,7 +18,9 @@ const ProductWindow = () => {
     setPanel(img);
   };
 
-  const returnHandler = function () {};
+  // const returnHandler = function () {
+  //   navigate('..');
+  // };
 
   const decreaseHandler = function () {
     if (quantity > 1) {
@@ -45,8 +48,8 @@ const ProductWindow = () => {
 
   return (
     <div className={classes['product-window']}>
-      <Link to="javascript:void(0)">
-        <button onClick={returnHandler} className={classes.btn}>
+      <Link>
+        {/* <button onClick={returnHandler} className={classes.btn}>
           <svg
             width="800px"
             height="800px"
@@ -59,7 +62,7 @@ const ProductWindow = () => {
               fill="#585555"
             />
           </svg>
-        </button>
+        </button> */}
       </Link>
       <div className={classes.display}>
         <img className={classes['big-panel']} src={panel} alt="" srcSet="" />

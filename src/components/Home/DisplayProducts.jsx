@@ -18,7 +18,6 @@ const DisplayProducts = ({ title, description, products }) => {
       <ul className={classes.container}>
         {products.map(product => (
           <Link
-          preventScrollReset={true}
             to={product.name.replace('- ', '').replaceAll(' ', '-')}
             key={product.name.replace('- ', '').replaceAll(' ', '-')}
           >

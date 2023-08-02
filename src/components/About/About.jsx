@@ -5,6 +5,7 @@ import classes from './About.module.css';
 import a6 from '../../Assets/about/a6.jpg';
 
 const About = () => {
+  window.scrollTo(0,0)
   return (
     <section className={classes.about}>
       <Banner banner={banner}>

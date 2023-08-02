@@ -7,7 +7,7 @@ const Banner = props => {
       style={{
         width: window.innerWidth <= 500 ? "90vw" : props.width,
         height: props.height,
-        alignItems: props.alignItems,
+        alignItems: props.alignItems || 'center',
         
       }}
       className={classes.banner}

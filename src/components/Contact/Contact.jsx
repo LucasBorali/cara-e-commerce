@@ -13,6 +13,7 @@ import telephone from '../../Assets/telephone.png';
 import newYork from '../../Assets/new-york.png';
 
 const Contact = () => {
+  window.scrollTo(0,0)
   return (
     <section className={classes.contact}>
       <Banner banner={banner}>

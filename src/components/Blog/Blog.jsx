@@ -6,7 +6,7 @@ import {blog} from '../../Assets/blog/blog'
 import BlogPost from './BlogPost'
 
 const Blog = () => {
-  
+   window.scrollTo(0,0)
   return (
     <section className={classes.blog}>
         <Banner banner={b19}>

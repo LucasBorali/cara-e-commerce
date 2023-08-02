@@ -5,7 +5,6 @@ import Contact from './components/Contact/Contact';
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 import RootLayout from './Pages/RootLayout';
 import HomePage from './Pages/HomePage';
-import ProductWindow from './components/Home/ProductWindow';
 import DisplayPage from './Pages/displayPage';
 
 const router = createBrowserRouter([
@@ -14,10 +13,10 @@ const router = createBrowserRouter([
     element: <RootLayout />,
     children: [
       { index: true, element: <HomePage /> },
+      { path: ':productName', element: <DisplayPage /> },
       {
         path: 'shop',
         element: <Shop />,
-        
       },
       { path: 'shop/:productName', element: <DisplayPage /> },
       { path: 'blog', element: <Blog /> },
