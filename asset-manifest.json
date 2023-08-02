@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/cara-e-commerce/static/css/main.402e0ecf.css",
-    "main.js": "/cara-e-commerce/static/js/main.e6d2ff7b.js",
+    "main.css": "/cara-e-commerce/static/css/main.3b1d31db.css",
+    "main.js": "/cara-e-commerce/static/js/main.d1d2b8ff.js",
     "static/js/787.ae4214ce.chunk.js": "/cara-e-commerce/static/js/787.ae4214ce.chunk.js",
     "static/media/hero4.png": "/cara-e-commerce/static/media/hero4.d02d6d2baf046ba16e25.png",
     "static/media/banner.png": "/cara-e-commerce/static/media/banner.d27d94d3b18765a0d795.png",
@@ -25,12 +25,12 @@
     "static/media/b7.jpg": "/cara-e-commerce/static/media/b7.2af5c7833ccb4dec437f.jpg",
     "static/media/pay.png": "/cara-e-commerce/static/media/pay.47ad3e696f50516da1b3.png",
     "index.html": "/cara-e-commerce/index.html",
-    "main.402e0ecf.css.map": "/cara-e-commerce/static/css/main.402e0ecf.css.map",
-    "main.e6d2ff7b.js.map": "/cara-e-commerce/static/js/main.e6d2ff7b.js.map",
+    "main.3b1d31db.css.map": "/cara-e-commerce/static/css/main.3b1d31db.css.map",
+    "main.d1d2b8ff.js.map": "/cara-e-commerce/static/js/main.d1d2b8ff.js.map",
     "787.ae4214ce.chunk.js.map": "/cara-e-commerce/static/js/787.ae4214ce.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.402e0ecf.css",
-    "static/js/main.e6d2ff7b.js"
+    "static/css/main.3b1d31db.css",
+    "static/js/main.d1d2b8ff.js"
   ]
 }
