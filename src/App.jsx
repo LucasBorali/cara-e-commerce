@@ -9,7 +9,7 @@ import DisplayPage from './Pages/displayPage';
 
 const router = createBrowserRouter([
   {
-    path: '/',
+    path: '/cara-e-commerce',
     element: <RootLayout />,
     children: [
       { index: true, element: <HomePage /> },

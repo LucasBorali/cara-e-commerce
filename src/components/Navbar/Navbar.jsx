@@ -41,19 +41,19 @@ const Navbar = () => {
           <div onClick={overlayHandler} className={classes.overlay}>
             <ul className={classes.menu}>
               <li>
-                <NavLink end className={({isActive})=> isActive ? classes.active : undefined} to="/">Home</NavLink>
+                <NavLink end className={({isActive})=> isActive ? classes.active : undefined} to="/cara-e-commerce">Home</NavLink>
               </li>
               <li>
-                <NavLink end className={({isActive})=> isActive ? classes.active : undefined} to="/shop">Shop</NavLink>
+                <NavLink end className={({isActive})=> isActive ? classes.active : undefined} to="/cara-e-commerce/shop">Shop</NavLink>
               </li>
               <li>
-                <NavLink end className={({isActive})=> isActive ? classes.active : undefined} to="/blog">Blog</NavLink>
+                <NavLink end className={({isActive})=> isActive ? classes.active : undefined} to="/cara-e-commerce/blog">Blog</NavLink>
               </li>
               <li>
-                <NavLink end className={({isActive})=> isActive ? classes.active : undefined} to="/about">About</NavLink>
+                <NavLink end className={({isActive})=> isActive ? classes.active : undefined} to="/cara-e-commerce/about">About</NavLink>
               </li>
               <li>
-                <NavLink end className={({isActive})=> isActive ? classes.active : undefined} to="/contact">Contact</NavLink>
+                <NavLink end className={({isActive})=> isActive ? classes.active : undefined} to="/cara-e-commerce/contact">Contact</NavLink>
               </li>
             </ul>
           </div>,
@@ -77,19 +77,19 @@ const Navbar = () => {
         ) : (
           <ul>
             <li>
-              <NavLink end className={({isActive})=> isActive ? classes.active : undefined} to="/">Home</NavLink>
+              <NavLink end className={({isActive})=> isActive ? classes.active : undefined} to="/cara-e-commerce">Home</NavLink>
             </li>
             <li>
-              <NavLink end className={({isActive})=> isActive ? classes.active : undefined} to="/shop">Shop</NavLink>
+              <NavLink end className={({isActive})=> isActive ? classes.active : undefined} to="/cara-e-commerce/shop">Shop</NavLink>
             </li>
             <li>
-              <NavLink end className={({isActive})=> isActive ? classes.active : undefined} to="/blog">Blog</NavLink>
+              <NavLink end className={({isActive})=> isActive ? classes.active : undefined} to="/cara-e-commerce/blog">Blog</NavLink>
             </li>
             <li>
-              <NavLink end className={({isActive})=> isActive ? classes.active : undefined} to="/about">About</NavLink>
+              <NavLink end className={({isActive})=> isActive ? classes.active : undefined} to="/cara-e-commerce/about">About</NavLink>
             </li>
             <li>
-              <NavLink end className={({isActive})=> isActive ? classes.active : undefined} to="/contact">Contact</NavLink>
+              <NavLink end className={({isActive})=> isActive ? classes.active : undefined} to="/cara-e-commerce/contact">Contact</NavLink>
             </li>
           </ul>
         )}
