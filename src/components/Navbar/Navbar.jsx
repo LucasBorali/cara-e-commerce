@@ -4,7 +4,7 @@ import ReactDOM from 'react-dom';
 import logo from '../../Assets/logo.png';
 import CartItems from './CartItems';
 import { useSelector } from 'react-redux';
-import { NavLink } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 
 const Navbar = () => {
   const cartItems = useSelector(state => state.cart.items);
@@ -41,19 +41,59 @@ const Navbar = () => {
           <div onClick={overlayHandler} className={classes.overlay}>
             <ul className={classes.menu}>
               <li>
-                <NavLink end className={({isActive})=> isActive ? classes.active : undefined} to="/cara-e-commerce">Home</NavLink>
+                <NavLink
+                  end
+                  className={({ isActive }) =>
+                    isActive ? classes.active : undefined
+                  }
+                  to="/cara-e-commerce"
+                >
+                  Home
+                </NavLink>
               </li>
               <li>
-                <NavLink end className={({isActive})=> isActive ? classes.active : undefined} to="/cara-e-commerce/shop">Shop</NavLink>
+                <NavLink
+                  end
+                  className={({ isActive }) =>
+                    isActive ? classes.active : undefined
+                  }
+                  to="/cara-e-commerce/shop"
+                >
+                  Shop
+                </NavLink>
               </li>
               <li>
-                <NavLink end className={({isActive})=> isActive ? classes.active : undefined} to="/cara-e-commerce/blog">Blog</NavLink>
+                <NavLink
+                  end
+                  className={({ isActive }) =>
+                    isActive ? classes.active : undefined
+                  }
+                  to="/cara-e-commerce/blog"
+                >
+                  Blog
+                </NavLink>
               </li>
               <li>
-                <NavLink end className={({isActive})=> isActive ? classes.active : undefined} to="/cara-e-commerce/about">About</NavLink>
+                <NavLink
+                  end
+                  className={({ isActive }) =>
+                    isActive ? classes.active : undefined
+                  }
+                  to="/cara-e-commerce/about"
+                >
+                  About
+                </NavLink>
               </li>
               <li>
-                <NavLink end className={({isActive})=> isActive ? classes.active : undefined} to="/cara-e-commerce/contact">Contact</NavLink>
+                <NavLink
+                  end
+                  className={({ isActive }) =>
+                    isActive ? classes.active : undefined
+                  }
+                  to="/cara-e-commerce/contact"
+                >
+                  Contact
+                </NavLink>
               </li>
             </ul>
           </div>,
@@ -77,19 +117,59 @@ const Navbar = () => {
         ) : (
           <ul>
             <li>
-              <NavLink end className={({isActive})=> isActive ? classes.active : undefined} to="/cara-e-commerce">Home</NavLink>
+              <NavLink
+                end
+                className={({ isActive }) =>
+                  isActive ? classes.active : undefined
+                }
+                to="/cara-e-commerce"
+              >
+                Home
+              </NavLink>
             </li>
             <li>
-              <NavLink end className={({isActive})=> isActive ? classes.active : undefined} to="/cara-e-commerce/shop">Shop</NavLink>
+              <NavLink
+                end
+                className={({ isActive }) =>
+                  isActive ? classes.active : undefined
+                }
+                to="/cara-e-commerce/shop"
+              >
+                Shop
+              </NavLink>
             </li>
             <li>
-              <NavLink end className={({isActive})=> isActive ? classes.active : undefined} to="/cara-e-commerce/blog">Blog</NavLink>
+              <NavLink
+                end
+                className={({ isActive }) =>
+                  isActive ? classes.active : undefined
+                }
+                to="/cara-e-commerce/blog"
+              >
+                Blog
+              </NavLink>
             </li>
             <li>
-              <NavLink end className={({isActive})=> isActive ? classes.active : undefined} to="/cara-e-commerce/about">About</NavLink>
+              <NavLink
+                end
+                className={({ isActive }) =>
+                  isActive ? classes.active : undefined
+                }
+                to="/cara-e-commerce/about"
+              >
+                About
+              </NavLink>
             </li>
             <li>
-              <NavLink end className={({isActive})=> isActive ? classes.active : undefined} to="/cara-e-commerce/contact">Contact</NavLink>
+              <NavLink
+                end
+                className={({ isActive }) =>
+                  isActive ? classes.active : undefined
+                }
+                to="/cara-e-commerce/contact"
+              >
+                Contact
+              </NavLink>
             </li>
           </ul>
         )}
@@ -105,7 +185,9 @@ const Navbar = () => {
             document.getElementById('window-root')
           )}
 
-        <button onClick={displayCartHandler}>
+        <Link to='/log-in' className={classes.register}>Sign in / Log In</Link>
+
+        {/* <button onClick={displayCartHandler}>
           <svg
             width="800px"
             height="800px"
@@ -125,7 +207,7 @@ const Navbar = () => {
             <path d="M8.5 12.5V11" stroke="#222222" strokeLinecap="round" />
             <path d="M15.5 12.5V11" stroke="#222222" strokeLinecap="round" />
           </svg>
-        </button>
+        </button> */}
       </div>
     </nav>
   );
