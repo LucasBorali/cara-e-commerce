@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
 import classes from './Register.module.css';
 import logo from '../Assets/logo.png';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { auth } from '../firebaseConfig';
 import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
 
 const RegisterPage = () => {
+  const navigate = useNavigate()
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
@@ -24,7 +25,7 @@ const RegisterPage = () => {
     console.log('Loading...');
   }
   if (user) {
-    console.log(user.user.uid);
+    navigate('/cara-e-commerce');
   }
 
   return (

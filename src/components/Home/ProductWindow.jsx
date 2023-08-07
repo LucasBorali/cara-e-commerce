@@ -1,8 +1,9 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import classes from './ProductWindow.module.css';
 import { useDispatch, useSelector } from 'react-redux';
 import { cartActions } from '../../store/cart-slice';
 import { Link } from 'react-router-dom';
+import { sendCartData } from '../../store/cart-actions';
 
 const ProductWindow = () => {
   const dispatch = useDispatch();
@@ -45,6 +46,14 @@ const ProductWindow = () => {
       })
     );
   };
+
+  const cart = useSelector(state => state.cart);
+  useEffect(() => {
+
+    if (cart.changed) {
+      dispatch(sendCartData(cart));
+    }
+  }, [cart, dispatch]);
 
   return (
     <div className={classes['product-window']}>

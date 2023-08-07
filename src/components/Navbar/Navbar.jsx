@@ -1,12 +1,15 @@
-import { React, useState } from 'react';
+import { React, useEffect, useState } from 'react';
 import classes from './Navbar.module.css';
 import ReactDOM from 'react-dom';
 import logo from '../../Assets/logo.png';
 import CartItems from './CartItems';
 import { useSelector } from 'react-redux';
 import { Link, NavLink } from 'react-router-dom';
+import { auth } from '../../firebaseConfig';
 
 const Navbar = () => {
+  const [user, setUser] = useState(null);
+
   const cartItems = useSelector(state => state.cart.items);
 
   const [displayMenu, setDisplayMenu] = useState(false);
@@ -31,6 +34,16 @@ const Navbar = () => {
       setDisplayCart(false);
     }
   };
+
+  useEffect(() => {
+    const authUnsubscribe = auth.onAuthStateChanged(user => {
+      if (user !== null) {
+        setUser(user);
+      }
+
+      authUnsubscribe();
+    });
+  }, []);
 
   return (
     <nav className={classes.navbar}>
@@ -185,29 +198,33 @@ const Navbar = () => {
             document.getElementById('window-root')
           )}
 
-        <Link to='/log-in' className={classes.register}>Sign in / Log In</Link>
-
-        {/* <button onClick={displayCartHandler}>
-          <svg
-            width="800px"
-            height="800px"
-            viewBox="0 0 24 24"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M5.34717 10.3339C5.41971 9.46346 5.45598 9.02824 5.74302 8.76412C6.03007 8.5 6.4668 8.5 7.34027 8.5H16.6597C17.5332 8.5 17.9699 8.5 18.257 8.76412C18.544 9.02824 18.5803 9.46346 18.6528 10.3339L18.8772 13.0259C19.1202 15.9422 19.2417 17.4004 18.6308 18.4758C18.3302 19.0049 17.9129 19.4584 17.4106 19.8019C16.3896 20.5 14.9264 20.5 12 20.5V20.5C9.07359 20.5 7.61038 20.5 6.58943 19.8019C6.08711 19.4584 5.66979 19.0049 5.36922 18.4758C4.7583 17.4004 4.87982 15.9422 5.12284 13.0259L5.34717 10.3339Z"
-              stroke="#222222"
-              strokeOpacity="1"
-            />
-            <path
-              d="M8.5 7L8.5 6.5C8.5 4.567 10.067 3 12 3V3C13.933 3 15.5 4.567 15.5 6.5L15.5 7"
-              stroke="#222222"
-            />
-            <path d="M8.5 12.5V11" stroke="#222222" strokeLinecap="round" />
-            <path d="M15.5 12.5V11" stroke="#222222" strokeLinecap="round" />
-          </svg>
-        </button> */}
+        {user === null ? (
+          <Link to="/log-in" className={classes.register}>
+            Sign in / Log In
+          </Link>
+        ) : (
+          <button onClick={displayCartHandler}>
+            <svg
+              width="800px"
+              height="800px"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M5.34717 10.3339C5.41971 9.46346 5.45598 9.02824 5.74302 8.76412C6.03007 8.5 6.4668 8.5 7.34027 8.5H16.6597C17.5332 8.5 17.9699 8.5 18.257 8.76412C18.544 9.02824 18.5803 9.46346 18.6528 10.3339L18.8772 13.0259C19.1202 15.9422 19.2417 17.4004 18.6308 18.4758C18.3302 19.0049 17.9129 19.4584 17.4106 19.8019C16.3896 20.5 14.9264 20.5 12 20.5V20.5C9.07359 20.5 7.61038 20.5 6.58943 19.8019C6.08711 19.4584 5.66979 19.0049 5.36922 18.4758C4.7583 17.4004 4.87982 15.9422 5.12284 13.0259L5.34717 10.3339Z"
+                stroke="#222222"
+                strokeOpacity="1"
+              />
+              <path
+                d="M8.5 7L8.5 6.5C8.5 4.567 10.067 3 12 3V3C13.933 3 15.5 4.567 15.5 6.5L15.5 7"
+                stroke="#222222"
+              />
+              <path d="M8.5 12.5V11" stroke="#222222" strokeLinecap="round" />
+              <path d="M15.5 12.5V11" stroke="#222222" strokeLinecap="round" />
+            </svg>
+          </button>
+        )}
       </div>
     </nav>
   );

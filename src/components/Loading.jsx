@@ -8,7 +8,6 @@ const Loading = () => {
         <svg>
             <circle cx='65' cy='65' r='50'></circle>
         </svg>
-        <p>Loading products</p>
     </div>
   )
 }

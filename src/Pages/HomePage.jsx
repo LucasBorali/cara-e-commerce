@@ -7,11 +7,12 @@ import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchCartData, sendCartData } from '../store/cart-actions';
 
+let isInitial = true;
+
 function HomePage() {
   const dispatch = useDispatch();
   const [window, setWindow] = useState('Home');
   const cart = useSelector(state => state.cart);
-  const [isInitial, setIsInitial] = useState(true);
 
   useEffect(() => {
     dispatch(fetchCartData());
@@ -19,7 +20,7 @@ function HomePage() {
 
   useEffect(() => {
     if (isInitial) {
-      setIsInitial();
+      isInitial = false;
       return;
     }
 
