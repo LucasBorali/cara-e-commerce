@@ -26,7 +26,7 @@ const LogInPage = () => {
     console.log('Loading...');
   }
   if (user) {
-    navigate('/cara-e-commerce');
+    navigate('/');
   }
 
   return (
@@ -125,7 +125,7 @@ const LogInPage = () => {
             </Link>
           </p>
 
-          <Link to="/cara-e-commerce">Cancel</Link>
+          <Link to="/">Cancel</Link>
         </form>
       )}
     </div>

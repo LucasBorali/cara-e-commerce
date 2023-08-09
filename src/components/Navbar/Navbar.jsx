@@ -1,15 +1,14 @@
-import { React, useEffect, useState } from 'react';
+import { React, useState } from 'react';
 import classes from './Navbar.module.css';
 import ReactDOM from 'react-dom';
 import logo from '../../Assets/logo.png';
 import CartItems from './CartItems';
 import { useSelector } from 'react-redux';
 import { Link, NavLink } from 'react-router-dom';
-import { auth } from '../../firebaseConfig';
+
 
 const Navbar = () => {
-  const [user, setUser] = useState(null);
-
+  const user = useSelector(state => state.user.user);
   const cartItems = useSelector(state => state.cart.items);
 
   const [displayMenu, setDisplayMenu] = useState(false);
@@ -35,16 +34,6 @@ const Navbar = () => {
     }
   };
 
-  useEffect(() => {
-    const authUnsubscribe = auth.onAuthStateChanged(user => {
-      if (user !== null) {
-        setUser(user);
-      }
-
-      authUnsubscribe();
-    });
-  }, []);
-
   return (
     <nav className={classes.navbar}>
       <img src={logo} alt="logo" />
@@ -59,7 +48,7 @@ const Navbar = () => {
                   className={({ isActive }) =>
                     isActive ? classes.active : undefined
                   }
-                  to="/cara-e-commerce"
+                  to="/"
                 >
                   Home
                 </NavLink>
@@ -70,7 +59,7 @@ const Navbar = () => {
                   className={({ isActive }) =>
                     isActive ? classes.active : undefined
                   }
-                  to="/cara-e-commerce/shop"
+                  to="/shop"
                 >
                   Shop
                 </NavLink>
@@ -81,7 +70,7 @@ const Navbar = () => {
                   className={({ isActive }) =>
                     isActive ? classes.active : undefined
                   }
-                  to="/cara-e-commerce/blog"
+                  to="/blog"
                 >
                   Blog
                 </NavLink>
@@ -92,7 +81,7 @@ const Navbar = () => {
                   className={({ isActive }) =>
                     isActive ? classes.active : undefined
                   }
-                  to="/cara-e-commerce/about"
+                  to="/about"
                 >
                   About
                 </NavLink>
@@ -103,7 +92,7 @@ const Navbar = () => {
                   className={({ isActive }) =>
                     isActive ? classes.active : undefined
                   }
-                  to="/cara-e-commerce/contact"
+                  to="/contact"
                 >
                   Contact
                 </NavLink>
@@ -135,7 +124,7 @@ const Navbar = () => {
                 className={({ isActive }) =>
                   isActive ? classes.active : undefined
                 }
-                to="/cara-e-commerce"
+                to="/"
               >
                 Home
               </NavLink>
@@ -146,7 +135,7 @@ const Navbar = () => {
                 className={({ isActive }) =>
                   isActive ? classes.active : undefined
                 }
-                to="/cara-e-commerce/shop"
+                to="/shop"
               >
                 Shop
               </NavLink>
@@ -157,7 +146,7 @@ const Navbar = () => {
                 className={({ isActive }) =>
                   isActive ? classes.active : undefined
                 }
-                to="/cara-e-commerce/blog"
+                to="/blog"
               >
                 Blog
               </NavLink>
@@ -168,7 +157,7 @@ const Navbar = () => {
                 className={({ isActive }) =>
                   isActive ? classes.active : undefined
                 }
-                to="/cara-e-commerce/about"
+                to="/about"
               >
                 About
               </NavLink>
@@ -179,7 +168,7 @@ const Navbar = () => {
                 className={({ isActive }) =>
                   isActive ? classes.active : undefined
                 }
-                to="/cara-e-commerce/contact"
+                to="/contact"
               >
                 Contact
               </NavLink>
@@ -198,7 +187,7 @@ const Navbar = () => {
             document.getElementById('window-root')
           )}
 
-        {user === null ? (
+        {!user ? (
           <Link to="/log-in" className={classes.register}>
             Sign in / Log In
           </Link>

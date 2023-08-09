@@ -15,7 +15,6 @@ import Loading from '../Loading';
 
 const Home = ({ setWindow }) => {
   const [fetchedProducts, setfetchedProducts] = useState(false);
- 
 
   const fetchProducts = async () => {
     const response = await fetch(
@@ -179,7 +178,9 @@ const Home = ({ setWindow }) => {
           products={fetchedProducts.newArrivals}
           title="New Arrivals"
         />
-      ) : <Loading />}
+      ) : (
+        <Loading />
+      )}
 
       <div className={classes['banner-container']}>
         <Banner

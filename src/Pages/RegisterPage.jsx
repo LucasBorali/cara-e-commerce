@@ -6,7 +6,7 @@ import { auth } from '../firebaseConfig';
 import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
 
 const RegisterPage = () => {
-  const navigate = useNavigate()
+  const navigate = useNavigate();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
@@ -25,14 +25,14 @@ const RegisterPage = () => {
     console.log('Loading...');
   }
   if (user) {
-    navigate('/cara-e-commerce');
+    navigate('/');
   }
 
   return (
     <div className={classes.register}>
       <img src={logo} alt="cara-logo" />
       <h1>Join us!</h1>
-      <form onSubmit={(e) => createUserHandler(e, email, password)}>
+      <form onSubmit={e => createUserHandler(e, email, password)}>
         <div>
           <label htmlFor="email">
             <svg
@@ -118,7 +118,7 @@ const RegisterPage = () => {
           </Link>
         </p>
 
-        <Link to="/cara-e-commerce">Cancel</Link>
+        <Link to="/">Cancel</Link>
       </form>
     </div>
   );

@@ -8,35 +8,54 @@ import HomePage from './Pages/HomePage';
 import DisplayPage from './Pages/displayPage';
 import LogInPage from './Pages/LogInPage';
 import RegisterPage from './Pages/RegisterPage';
+import { useDispatch } from 'react-redux';
+import { useEffect } from 'react';
+import { userActions } from './store/user-slice';
+import { auth } from './firebaseConfig';
 
-const router = createBrowserRouter([
-  {
-    path: '/cara-e-commerce',
-    element: <RootLayout />,
-    children: [
-      { index: true, element: <HomePage /> },
-      { path: ':productName', element: <DisplayPage /> },
-      {
-        path: 'shop',
-        element: <Shop />,
-      },
-      { path: 'shop/:productName', element: <DisplayPage /> },
-      { path: 'blog', element: <Blog /> },
-      { path: 'about', element: <About /> },
-      { path: 'contact', element: <Contact /> },
-    ],
-  },
-  {
-    path: '/log-in',
-    element: <LogInPage />
-  },
-  {
-    path: '/sign-in',
-    element: <RegisterPage />
-  }
-]);
+const router = createBrowserRouter(
+  [
+    {
+      path: '/',
+      element: <RootLayout />,
+      children: [
+        { index: true, element: <HomePage /> },
+        { path: ':productName', element: <DisplayPage /> },
+        {
+          path: 'shop',
+          element: <Shop />,
+        },
+        { path: 'shop/:productName', element: <DisplayPage /> },
+        { path: 'blog', element: <Blog /> },
+        { path: 'about', element: <About /> },
+        { path: 'contact', element: <Contact /> },
+      ],
+    },
+    {
+      path: '/log-in',
+      element: <LogInPage />,
+    },
+    {
+      path: '/sign-in',
+      element: <RegisterPage />,
+    },
+  ],
+  { basename: '/cara-e-commerce' }
+);
 
 function App() {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    const authUnsubscribe = auth.onAuthStateChanged(user => {
+      if (user !== null) {
+        dispatch(userActions.setUser());
+      }
+
+      authUnsubscribe();
+    });
+  }, [dispatch]);
+
   return <RouterProvider router={router} />;
 }
 

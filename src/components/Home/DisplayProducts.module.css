@@ -1,82 +1,78 @@
-.display-product h2{
-    font-size: 3rem;
-    margin: 0;
+.display-product h2 {
+  font-size: 3rem;
+  margin: 0;
 }
 
 .display-product p {
-    font-weight: bold;
-    font-size: 1.2rem;
-    color: var(--cadet-grey);
+  font-weight: bold;
+  font-size: 1.2rem;
+  color: var(--cadet-grey);
 }
 
 .container {
-    padding: 10px;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    justify-content: center;
+  padding: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
 }
 
 .card {
-    width: 200px;
-    height: 300px;
-    padding: 15px;
-    border-radius: 20px;
-    border: 1px solid var(--platinum);
-    box-shadow: 0 0 12px var(--box-shadow);
-    display: flex;
-    flex-direction: column;
-    align-items: start;
-    justify-content: space-around;
-    cursor: pointer;
-    transition: 0.2s ease;
+  width: 200px;
+  height: 300px;
+  padding: 15px;
+  border-radius: 20px;
+  border: 1px solid var(--platinum);
+  box-shadow: 0 0 12px var(--box-shadow);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-around;
+  cursor: pointer;
+  transition: 0.2s ease;
 }
 
 .card:hover {
-    transform: scale(1.03);
-
+  transform: scale(1.03);
 }
 
 .card img {
-    width: 100%;
-    border-radius: 10px;
-    max-height: 200px;
-    object-fit: cover;
+  width: 100%;
+  border-radius: 10px;
+  max-height: 200px;
+  object-fit: cover;
 }
 
 .card p {
-    margin: 4px 0 ;
-    font-size: 1rem;
-    font-weight: 900;
+  margin: 4px 0;
+  font-size: 1rem;
+  font-weight: 900;
 }
 
 .card button {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 42px;
-    height: 42px;
-    padding: 8px;
-    border: none;
-    border-radius: 50%;
-    cursor: pointer;
-    background-color: #5db6ac69;
-    transition: 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  padding: 8px;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  background-color: #5db6ac69;
+  transition: 0.2s ease;
 }
 
 .card button:hover {
-    background-color: #4baa9fac;
+  background-color: #4baa9fac;
 }
-
 
 .card svg {
-    width: 100%;
+  width: 100%;
 }
 
-
-
 @media (max-width: 500px) {
-    .card {
-        width: 80vw;
-    }
+  .card {
+    width: 80vw;
+  }
 }
